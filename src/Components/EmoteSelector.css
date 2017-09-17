@@ -1,0 +1,10 @@
+.emoteList > img {
+    border-radius: 4px;
+    min-height: 25px;
+    min-width: 25px;
+}
+
+.emoteList > img:hover{
+    background-color: brown;
+
+}

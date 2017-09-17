@@ -1,0 +1,29 @@
+.Header {
+    height: 200px;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    color: white;
+    position: relative;
+}
+
+.Header > .HeaderText {
+    color: white;
+    font-size: 5rem;
+    margin: auto;
+}
+
+.smallFont {
+    font-size: 0.7rem;
+}
+
+.LoginForm {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    background-color: rgba(255,255,255,0.3);
+    width: 30%;
+    padding: 20px;
+}

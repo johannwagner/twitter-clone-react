@@ -1,0 +1,8 @@
+.tweetList {
+    display: flex;
+    flex-flow: column;
+    padding: 20px;
+}
+
+
+

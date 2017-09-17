@@ -1,0 +1,28 @@
+.App {
+    text-align: center;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    font-family: 'Raleway', sans-serif;
+    background-image: url("https://static.pexels.com/photos/394378/pexels-photo-394378.jpeg");
+}
+
+.ContentWrapper {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.Content {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+}
