@@ -20,6 +20,7 @@ class EmoteSelector extends Component {
     }
 
     addEmote(emoteId) {
+        this.props.onSelect();
         this.props.selectEmote(this.props.authentication.clientToken, this.props.ownerId, this.props.tweetId, emoteId)
     }
 
@@ -59,6 +60,7 @@ let mapDispatchToProps = dispatch => {
         },
 
         selectEmote: (clientToken, ownerId, tweetId, emoteId) => {
+
             dispatch(tweetsActions.addReaction(clientToken, ownerId, tweetId, emoteId, () => {
                 dispatch(tweetsActions.fetchTweets(clientToken));
             }));

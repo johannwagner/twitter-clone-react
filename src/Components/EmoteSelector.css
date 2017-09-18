@@ -4,6 +4,12 @@
     min-width: 25px;
 }
 
+.emoteList {
+    border: solid rgba(0, 0, 0, 0.3) 1px;
+    padding: 20px;
+    margin: 20px;
+}
+
 .emoteList > img:hover{
     background-color: brown;
 

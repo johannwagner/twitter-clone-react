@@ -9,12 +9,17 @@ import TweetCreator from "./TweetCreator";
 
 class Tweet extends Component {
 
+
     constructor() {
         super();
         this.state = {
             emoteSelectorOpen: false,
             replyMask: false
         }
+    }
+
+    toggleEmoteSelector() {
+        this.setState({emoteSelectorOpen: !this.state.emoteSelectorOpen});
     }
 
     toggleReplyMask(e) {
@@ -33,20 +38,6 @@ class Tweet extends Component {
                 </div>
             );
         });
-
-        const popoverBottom = (
-            <Popover id="popover-positioned-bottom">
-                <EmoteSelector ownerId={tweet.ownerId} tweetId={tweet.id}/>
-            </Popover>
-        );
-
-
-        let emoteOverlay = (
-            <OverlayTrigger trigger="click" placement="bottom" overlay={popoverBottom}>
-                <i className="material-icons">mood</i>
-            </OverlayTrigger>
-        );
-
 
         let tweetReplies = [];
         if(tweet.referenceTweets) {
@@ -68,10 +59,13 @@ class Tweet extends Component {
                     {!this.props.referenceTweetId ? <i className="material-icons" onClick={this.toggleReplyMask.bind(this)}>reply</i> : ''}
                 </div>
                 <div className={'tweetEmoteButton ' + (this.state.emoteSelectorOpen ? 'iconSelected' :'')}>
-                    {emoteOverlay}
+                    <i className="material-icons" onClick={this.toggleEmoteSelector.bind(this)}>mood</i>
                 </div>
                 <div className="tweetReply">
                     {this.state.replyMask ? <TweetCreator referenceTweetId={tweet.id}/> : ''}
+                </div>
+                <div className="tweetEmotes">
+                    {this.state.emoteSelectorOpen ? <EmoteSelector onSelect={() => this.setState({emoteSelectorOpen: false})} ownerId={tweet.ownerId} tweetId={tweet.id}/> : ''}
                 </div>
                 <div className="tweetReactions">
                     {renderableTweetReactions}

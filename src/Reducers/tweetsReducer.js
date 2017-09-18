@@ -12,7 +12,6 @@ export default function(state = defaultState, action) {
             return {...state, tweetsPending: false, tweets: action.payload.data};
         case "FETCH_TWEETS_REJECTED":
             return {...state, tweetsPending: false};
-
         default:
             return state;
     }
